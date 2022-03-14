@@ -13,7 +13,7 @@ processus d'embauche, de ses avantages et bien plus
 * Autant que utilisateur je peux switcher mon compte au employeur.
 * Autant que utilisateur je peux voir tous les information sur une entreprise :
   - Overview
-  - -Reviews
+  - Reviews
   - Salaries
   - interview
 * Autant que utilisateur je peux voir la liste de recherche a travers la case de recherche .
