@@ -2,22 +2,21 @@
 ## Présentation du projet
 Nom du site: ArtemisJobs
 
-Description du site: ArtemisJobs est un site ou les employee actule et les
-annciens d'une entreprise évaluent leur envirenment de trvaille
+Description du site: ArtemisJobs est un site où les employees actuels et les anciens d'une entreprise évaluent leur enverminent de travail
 ## Objectif du site
-l'objectif de ce site web est d'aider les chercheur d'emploi a savoir plus
-d'idee sur l'entreprise en donnant un aperçu de sa culture, de ses salaires, de son
+l'objectif de ce site web est d'aider les chercheurs d'emploi à savoir plus
+d'idée sur l'entreprise en donnant un aperçu de sa culture, de ses salaires, de son
 processus d'embauche, de ses avantages et bien plus
 ## Organisation des contenus et navigation
-* Autant que utilisateur je peux crée mon compte personnelle.
-* Autant que utilisateur je peux switcher mon compte au employeur.
-* Autant que utilisateur je peux voir tous les information sur une entreprise :
-  - Overview
+* Autant qu'utilisateurs je peux créé mon compte personnel.
+* Autant qu'utilisateurs je peux switcher mon compte aux employeurs.
+* Autant qu'utilisateurs je peux voir toutes les informations sur une entreprise :
+  - overview
   - Reviews
   - Salaries
   - interview
-* Autant que utilisateur je peux voir la liste de recherche a travers la case de recherche .
-* le feedback des employés ancienne et actuelle.
+* Autant qu'utilisateurs je peux voir la liste de recherche à travers la case de recherche .
+* le feedback des employés anciens et actuels.
 ## logiciels nécessaires
 
 | Number	| Description |	Type | 
