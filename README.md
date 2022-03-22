@@ -17,7 +17,7 @@ processus d'embauche, de ses avantages.
   - interview
 * Autant qu'utilisateurs je peux voir la liste de recherche à travers la case de recherche .
 * le feedback des employés anciens et actuels.
-## CARACTÉRISTIQUES DE DMINISTRATOR : L’administrateur peut gérer l’ensemble du site Web :
+## L’administrateur peut gérer l’ensemble du site Web :
 * Gérer la section complète  Comme : ---activer/désactiver/supprimer/modifier les informations des demandeurs   d’emploi.
 * Gérer la section complète de l’employeur. 
 * L’utilisateur administrateur peut activer/désactiver/supprimer/modifier les informations de l’entreprise.
