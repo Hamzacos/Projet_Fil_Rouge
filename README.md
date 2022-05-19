@@ -2,7 +2,7 @@
 ## Présentation du projet
 Nom du site: ArtemisJobs
 
-Description du Applicaton : ArtemisJobs est une application où les employees actuels et les anciens d'une entreprise évaluent leur envirominent de travail (partage d'expérience - évaluation entreprise - )
+Description du Applicaton : ArtemisJobs est une application où les employees actuels et les anciens d'une entreprise évaluent leur environnement de travail (partage d'expérience - évaluation entreprise - )
 ## Objectif du site
 l'objectif de cette platform web est d'aider les chercheurs d'emploi à savoir plus
 d'idée sur l'entreprise en donnant un aperçu de sa culture, de ses salaires, de son
