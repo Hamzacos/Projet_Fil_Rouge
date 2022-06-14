@@ -1,0 +1,7 @@
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteBase /Artemis-Jobs/
+
+RewriteRule ^([-a-zA-a0-9]+)$ index.php?page=$1 [L,QSA]

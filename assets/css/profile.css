@@ -1,0 +1,343 @@
+
+
+body{
+ background:#dcdcdc;
+ /* margin-top:20px; */
+}
+.profile-cover {
+    position: relative;
+    z-index: 0;
+}
+
+.panel {
+    margin-bottom: 30px;
+    color: #696969;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+.profile-cover__action {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    padding: 120px 30px 10px 153px;
+    border-radius: 5px 5px 0 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    overflow: hidden;
+    background: url(https://bootdey.com/img/Content/bg1.jpg) no-repeat;
+    background-size: cover;
+}
+
+.profile-cover__action > .btn {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-cover__img {
+    position: absolute;
+    top: 135px;
+    left: 30px;
+    text-align: center;
+    z-index: 1;
+}
+a{
+    margin-left: 30px;
+    padding-left: 30px;
+    border-left: 1px solid #eee;
+    color: #393939;
+}
+.profile-cover__img > img {
+    max-width: 120px;
+    /* border: 5px solid #fff; */
+    border-radius: 10px;
+}
+
+.profile-cover__img > .h3 {
+    color: #393939;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.profile-cover__img > img + .h3 {
+    margin-top: 6px;
+}
+
+.profile-cover__info .nav {
+    margin-right: 28px;
+    padding: 15px 0 10px 170px;
+    color: #999;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.profile-cover__info .nav li {
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+.profile-cover__info .nav strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #e16123;
+    font-size: 34px;
+}
+
+@media (min-width: 481px) {
+    .profile-cover__action > .btn {
+        min-width: 125px;
+    }
+
+    .profile-cover__action > .btn > span {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-cover__info .nav {
+        display: block;
+        margin: 90px auto 0;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .profile-cover__info .nav li:not(:first-child) {
+        margin-top: 8px;
+        margin-left: 0;
+        padding-top: 18px;
+        padding-left: 0;
+        border-top: 1px solid #eee;
+        border-left-width: 0;
+    }
+}
+
+.panel {
+    margin-bottom: 30px;
+    color: #696969;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+.panel-heading {
+    color: #393939;
+    padding: 10px 20px;
+    border-width: 0;
+    border-radius: 0;
+}
+
+.panel-heading:after,
+.panel-heading:before {
+    content: " ";
+    display: table;
+}
+
+.panel-heading:after {
+    clear: both;
+}
+
+.panel-title {
+    float: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.panel-title select {
+    border-width: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+.panel-title select option {
+    text-transform: capitalize;
+}
+
+.panel-title .select2 {
+    display: block;
+    min-width: 200px;
+}
+
+.panel-title .select2-selection {
+    height: auto;
+    padding: 0;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.no-outlines .panel-title .select2-selection {
+    outline: 0;
+}
+
+.panel-title .select2-selection .select2-selection__rendered {
+    float: left;
+    margin-right: 8px;
+    padding: 0;
+    line-height: inherit;
+}
+
+.panel-title .select2-selection .select2-selection__arrow {
+    float: left;
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+}
+
+.panel-title .select2-selection .select2-selection__arrow:before {
+    content: "\f107";
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: 700;
+}
+
+.panel-title .select2-container--open .select2-selection__arrow:before {
+    content: "\f106";
+}
+
+.panel-heading .dropdown {
+    float: right;
+}
+
+.panel-heading .dropdown .dropdown-toggle {
+    margin: -10px -20px;
+    padding: 10px 20px;
+    color: #999;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.panel-heading .dropdown .dropdown-toggle:after,
+.toolbar__nav > li > a > span {
+    display: none;
+}
+
+.panel-heading .dropdown-menu {
+    top: 30px !important;
+    left: auto !important;
+    right: -20px;
+    margin: 0;
+    padding: 10px 0;
+    border-width: 0;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    -webkit-transform: none !important;
+    transform: none !important;
+    z-index: 1001;
+}
+
+.panel-heading .dropdown-menu a {
+    padding: 5px 15px;
+    color: #999;
+    font-size: 13px;
+    line-height: 23px;
+}
+
+.panel-heading .dropdown-menu a:hover {
+    color: #e16123;
+}
+
+.panel-heading .dropdown-menu i {
+    min-width: 15px;
+    margin-right: 6px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.panel-subtitle {
+    margin: 20px 0;
+}
+
+.panel-subtitle:first-child {
+    margin-top: 0;
+}
+
+.panel-subtitle .h5 {
+    color: #999;
+    font-weight: 600;
+}
+
+.panel-subtitle .h5 small {
+    color: #777;
+}
+
+.panel-body {
+    padding: 20px;
+}
+
+.panel-content,
+.panel-social {
+    position: relative;
+    border-radius: 0 0 4px 4px;
+}
+
+.panel-content {
+    border-top: 1px solid #eee;
+    padding: 31px 20px 33px;
+}
+
+.panel-about table {
+    width: 100%;
+    word-break: break-word;
+}
+
+/* .panel-about table tr + tr td,
+.panel-about table tr + tr th {
+    padding-top: 8px;
+} */
+
+.panel-about table th {
+    min-width: 120px;
+    color: #2bb3c0;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+.panel-about table th > i {
+    min-width: 14px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.panel-social {
+    padding: 0 20px 33px;
+    z-index: 0;
+}
+
+.panel-heading + .panel-social {
+    padding-top: 21px;
+    border-top: 1px solid #eee;
+}
+
+.panel-social > .nav {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.panel-social > .nav > li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.panel-social > .nav > li > a {
+    color: #ccc;
+}
