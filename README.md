@@ -1,8 +1,10 @@
 # Aretemis_Jobs
+## Intro 
+ArtemisJobs est une application où les employés actuels et les anciens d'une entreprise évaluent leur environnement de travail (partage d'expérience - évaluation entreprise - )
 ## Objectif du site
 l'objectif de cette platform web est d'aider les chercheurs d'emploi à savoir plus
 d'idée sur l'entreprise en donnant un aperçu de sa culture, de ses salaires, de son
-processus d'embauche, de ses avantages.
+processus d'embauche, de ses avantages. a travers 
 ## Organisation des contenus et navigation
 * Autant qu'utilisateurs je peux créé mon compte personnel.
 * Autant qu'utilisateurs je peux switcher mon compte aux employeurs.
