@@ -1,4 +1,4 @@
-// Rating Initialization
-$(document).ready(function() {
-    $('#rateMe2').mdbRate();
-  });
+// // Rating Initialization
+// $(document).ready(function() {
+//     $('#rateMe2').mdbRate();
+//   });

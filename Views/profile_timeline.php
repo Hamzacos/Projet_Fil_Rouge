@@ -2,10 +2,10 @@
   
    $data = new companyController();
    $company = $data->getCompanyByName();
-
+   
    if(!$company) {
-    echo "error";
-    die();  
+    header('location: suggest');
+
   }
 
   $dataRate = new ratecompanyController();
@@ -25,30 +25,8 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
   <?php require_once('navbar.php'); ?>
-
-<div class="container-fluid">
-    <div class="">
-        <div class="panel profile-cover">
-            <div class="profile-cover__img">
-                <img src="./img/<?php  echo  $company['image'] ?>" alt="" width="100px" />
-                <img class="rounded">
-                <h3 class="h3"><?php echo $company['Name'] ?></h3>
-            </div>
-            <div class="profile-cover__action bg--img" data-overlay="0.3">
-                <button class="btn btn-rounded btn-info">
-                    <i class="fa fa-plus"></i>
-                    <span>Follow</span>
-                </button>
-            </div>
-            <div class="profile-cover__info">
-                <ul class="nav">
-                    <a href="affichage_Company?search=<?php echo $company['Name'] ?>"  class="text-decoration-none"><li class=" text-dark"><strong><?php echo $nbrRate[0]; ?></strong>Company Review</li></a>
-                    <a href="afichage_Salary?search=<?php echo $company['Name'] ?>"    class="text-decoration-none"><li class=" text-dark"><strong>33</strong>Salary</li></a>
-                    <a href="#"  class="text-decoration-none"><li class=" text-dark"></li><li><strong>136</strong>Interview Review</li></a>
-                    <a href="#"  class="text-decoration-none"><li class=" text-dark"></li><strong>136</strong>Workplace Photo</li></a>
-                </ul>
-            </div>
-        </div>
+  
+  <?php require_once ('headerAffichage.php'); ?>
         <div class="panel">
             <div class="panel-heading">
                 <h2 class="panel-title">Google Overview</h2>

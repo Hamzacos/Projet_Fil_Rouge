@@ -1,3 +1,16 @@
+<?php
+
+ if(isset($_SESSION['id'])){
+    $follow = new companyController();
+   $company =  $follow->getOnefollow();
+
+   function empty_array_filter($val){
+    return $val;
+}
+$follwer =(array_filter($company,'empty_array_filter'));
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,41 +137,16 @@
 </section>
     <div class="container">
         <h1 class="text-center"><strong><em>Companies You Follow !!</em></strong></h1><div class="row">
-    <div class="col-md-6" style="width: 600px;">
-        <div class="card">
-            <div class="card-body">
-             <div>
-                <div  class="d-flex w-50">
-                <img class="rounded" src="assets/img/capgemini-squareLogo-1631742564673%20(1).png" style="border-radius: 10px;padding-right: 3px;" />
-                    
-                    <div class="d-flex flex-column w-50">
-                       <h4 style="padding: px;margin: 0px;">Capgemini</h4>
-                     <div class="d-flex">
-                    <h6 class="text-muted mb-2" style="font-size: 10px;">9K<br /><br />Jobs<br /><br /></h6>
-                    <h6 class="text-muted mb-2" style="font-size: 10px;">54K<br /><br />Reviews<br /><br /></h6>
-                    <h6 class="text-muted mb-2" style="font-size: 10px;">59K<br /><br />Salaries<br /></h6>
-                </div>
-                </div>
-                 </div>   
-                        
-                        
-                       
-                        
-                        
-                </div>
-                
-                <p class="card-text">It was well planned and was executed<br /> smoothly; Onboarding processes <br />was well documented and very informative; <br />HR person leading the onboarding <br />processes was very knowledgeable<br /> and helpful; The onboarding session<br /> was ver yong yet enjoyable ...<br /> Continue reading  <br /><br />                                                                  Senior Manager, Princeton, NJ<br />                                                                 Current Employee, less than a year </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6" style="width: 600px;">
+
+<!-- <?php //foreach($follwer as $key): ?>
+    <div class="col-md-6 mb-5" style="width: 600px;">
         <div class="card">
             <div class="card-body">
                 <div>
                     <div class ="d-flex w-50">
-                        <img src="assets/img/cegedim-squarelogo-1432806536748.png" style="box-shadow: 1px 1px 4px;border-radius: 10px;height: 70px;">
+                        <img src="./img/<?php  //echo $key['image'] ?>" style="box-shadow: 1px 1px 4px;border-radius: 10px;height: 70px;">
                         <div class="d-flex flex-column w-50" >
-                <h4 style ="padding:px;margin:0px;">Cegedim</h4>
+                <h4 style ="padding:px;margin:0px;"><?php //echo $key['Name']; ?></h4>
                 <div class="d-flex ">
                     <h6 class="text-muted mb-2" style="font-size: 10px;">257<br /><br />
                         Jobs<br /><br />
@@ -182,7 +170,42 @@
         </div>
     </div>
 </div>
-    </div>
+    </div> -->
+
+    <?php //endforeach; ?>
+    <?php foreach($follwer as $key): ?>
+    <div class="col-4" stye ="flex-wrap :nowrap">
+            <div class="card">
+                <div class="card-body p-4">
+                <div class ="d-flex w-50">
+                        <img src="./img/<?php  echo $key['image'] ?>" style="box-shadow: 1px 1px 4px;border-radius: 10px;height: 70px;">
+                        <div class="d-flex flex-column w-50" >
+                <h4 style ="padding:px;margin:0px;" class="mb-3"><?php echo $key['Name']; ?></h4>
+                <div class="d-flex ">
+                    <h6 class="text-muted mb-2" style="font-size: 10px;">257<br /><br />
+                        Jobs<br /><br />
+                    </h6>
+                    <h6 class="text-muted mb-2" style="font-size: 10px;">
+                        257<br/><br/>
+                        Reviews<br /><br />
+                    </h6>
+                    <h6 class="text-muted mb-2" style="font-size: 10px;">
+                        257
+                        <br /><br />
+                        Salaries
+                        <br />
+                    </h6>
+                </div>
+                        </div>
+                    </div>
+                <p class="card-text"><strong class="mx-3">Secteur d'activite :</strong><?php echo $key['secteur'];?></p>
+                <p class="card-text"><strong class="mx-3">City :</strong><?php echo $key['city'];?></p>
+                <p class="card-text"><strong class="mx-3">phone of company :</strong><?php echo $key['phone'];?></p>
+                </div>
+            </div>
+        </div>
+
+        <?php endforeach; ?>
     <div class="container py-4 py-xl-5"><div class="row mb-5">
     <div class="col-md-8 col-xl-6 text-center mx-auto">
         <h2>Popular Articles</h2>

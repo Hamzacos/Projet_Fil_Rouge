@@ -16,6 +16,7 @@
                             $_SESSION['logged'] = true;
                             $_SESSION['email']  = $result->email;
                             $_SESSION['company']  = $result->company;
+                            $_SESSION['id']  = $result->id;
                             header('location: dashbord');
                         }
                     }else{

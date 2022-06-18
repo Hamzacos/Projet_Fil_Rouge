@@ -108,4 +108,53 @@ class Company
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    static public function follow($data){
+        try {
+            $query = 'INSERT INTO `follow`(id,id_entreprise) VALUES (:id,:id_entreprise)';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->bindParam(':id',  $data['id']);
+            $stmt->bindParam(':id_entreprise', $data['id_entreprise']);
+           $spg =  $stmt->execute();
+            if ($spg) {
+                return 'ok';
+            }
+        } catch (PDOException $ex) {
+            echo 'erreur' . $ex->getMessage();
+        }
+    }
+
+    static public function getFollow()
+    {
+        // $id_entreprise = $data['id_entreprise'];
+        try {
+            $query = 'SELECT * FROM follow INNER JOIN company ON follow.id_entreprise=company.id_entreprise; ';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            $company = $stmt->fetchAll();
+            return $company;
+
+        } catch (PDOException $ex) {
+            echo 'erreur' . $ex->getMessage();
+        }
+    }
+
+    static public function checkfolow($data){
+        try {
+            $query = 'SELECT * FROM follow  WHERE id_entreprise=:id_entreprise AND id = :id';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->bindParam(':id',  $data['id']);
+            $stmt->bindParam(':id_entreprise', $data['id_entreprise']);
+            
+            $stmt->execute();
+            $check = $stmt->fetchAll();
+            // echo $_SESSION['id'];
+            // print_r($check);
+            // die();
+            return $check;
+
+        } catch (PDOException $ex) {
+            echo 'erreur' . $ex->getMessage();
+        }
+    }
 }

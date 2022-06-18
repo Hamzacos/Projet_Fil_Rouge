@@ -53,7 +53,7 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right">
+      <form class="navbar-form navbar-right" >
         <input type="text" class="form-control" placeholder="Search...">
         <button class="btn btn-primary">Search</button>
       </form>
@@ -69,17 +69,17 @@
         <a href="#" class="list-group-item collapsed" data-target="#submenu1" data-toggle="collapse" data-parent="#sidebar"><span class="fa fa-fw fa-dashboard"></span> Post Categories<span class="caret arrow"></span></a>
           <div class="list-group collapse" id="submenu1">
             <a href="AD_Company" class="list-group-item">Company Review</a>
-            <a href="#" class="list-group-item">Salary</a>
-            <a href="#" class="list-group-item">Interview Review</a>
-            <a href="#" class="list-group-item">Workplace Photo</a>
+            <a href="AD_Salary" class="list-group-item">Salary</a>
+            <a href="AD_Interview" class="list-group-item">Interview Review</a>
+            <a href="AD_WorkPlace" class="list-group-item">Workplace Photo</a>
           </div>
-        <a href="#" class="list-group-item"><span class="fa fa-fw fa-dashboard"></span> Message</a>
+        <a href="msg" class="list-group-item"><span class="fa fa-fw fa-dashboard"></span> Message</a>
         <a href="Ajouter_Company" class="list-group-item"><span class="fa fa-fw fa-dashboard"></span> Ajouter Entreprise</a>
       </div>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">ADD Company</h1>
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Name of Company</label>
@@ -126,7 +126,7 @@
           <div class="form-group">
             <label>Image of the company </label>
                 <span class="btn btn-default btn-file">
-                <input id="input-2"  type="file" class="file form-control " multiple data-show-upload="true" data-show-caption="true"  name="image">
+                <input id="input-2"  type="file" class="file form-control " multiple data-show-upload="true" data-show-caption="true" name="image">
                 </span>
         </div>
             <button type="submit" class="btn btn-primary mt-5" name="insert">Add Company</button>

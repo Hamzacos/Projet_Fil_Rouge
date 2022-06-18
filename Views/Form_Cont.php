@@ -28,9 +28,7 @@
                                       <label class="form-check-label" for="exampleRadios1">
                                         Company Review
                                       </label>
-                                    
                                     </div>
-                                   
                                     <div class="form-check">
                                       <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                       <label class="form-check-label" for="exampleRadios2">
@@ -38,14 +36,14 @@
                                       </label>
                                     </div>
                                    <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option2">
-                                      <label class="form-check-label" for="exampleRadios2">
+                                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                      <label class="form-check-label" for="exampleRadios3">
                                         Interview Review
                                       </label>
                                     </div>
-                    <div class="form-check">
-                                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option2">
-                                      <label class="form-check-label" for="exampleRadios2">
+                                   <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+                                      <label class="form-check-label" for="exampleRadios4">
                                        Workplace Photo
                                       </label>
                                     </div>
@@ -107,10 +105,18 @@ function myFunction(e){
 
   switch (input) {
     case 'option1':
-      window.location.href = 'RateCompany';
+      window.location.href ='RateCompany';
       break;
       case 'option2':
-        window.location.href = 'RateSalary';
+        window.location.href ='RateSalary';
+        break;
+      case 'option3':
+        window.location.href ='RateInterview';
+        break;  
+      case 'option4':
+        window.location.href ='workPlace';
+        break;
+       
   
     default:
       break;

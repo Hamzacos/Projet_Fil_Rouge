@@ -5,6 +5,10 @@
 <?php
   $dataCompany = new companyController();
   $nbrcompany =$dataCompany-> CountAllCompany();
+
+  $datasuggest = new suggestController();
+  $nbrMsg =$datasuggest->CountSuggest();
+
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -21,21 +25,6 @@
 <!-- partial:index.partial.html -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-      <button type="button" class="navbar-toggle collapsed pull-left visible-xs" data-toggle="collapse" data-target="#sidebar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-      <a class="navbar-brand" href="#"><img src="assets/img/logo.png" style="width: 30px;height: 30px" ></a>
-    </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="#">Home</a></li>
@@ -65,15 +54,15 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar collapse" id="sidebar">
       <div class="list-group">
-        <a href="#" class="list-group-item active"><span class="fa fa-fw fa-dashboard"></span> Dashboard</a>
+        <a href="Dashbord_Admin" class="list-group-item active"><span class="fa fa-fw fa-dashboard"></span> Dashboard</a>
         <a href="#" class="list-group-item collapsed" data-target="#submenu1" data-toggle="collapse" data-parent="#sidebar"><span class="fa fa-fw fa-dashboard"></span> Post Categories<span class="caret arrow"></span></a>
           <div class="list-group collapse" id="submenu1">
             <a href="AD_Company" class="list-group-item">Company Review</a>
-            <a href="#" class="list-group-item">Salary</a>
-            <a href="#" class="list-group-item">Interview Review</a>
-            <a href="#" class="list-group-item">Workplace Photo</a>
+            <a href="AD_Salary" class="list-group-item">Salary</a>
+            <a href="AD_Interview" class="list-group-item">Interview Review</a>
+            <a href="AD_WorkPlace" class="list-group-item">Workplace Photo</a>
           </div>
-        <a href="#" class="list-group-item"><span class="fa fa-fw fa-dashboard"></span> Message</a>
+        <a href="msg" class="list-group-item"><span class="fa fa-fw fa-dashboard"></span> Message</a>
         <a href="Ajouter_Company" class="list-group-item"><span class="fa fa-fw fa-dashboard"></span> Ajouter Entreprise</a>
       </div>
     </div>
@@ -92,10 +81,10 @@
         </div>
         <div class="col-6 col-sm-3">
           <div class="panel panel-success">
-            <div class="panel-heading">Number Post</div>
+            <div class="panel-heading">Number Message</div>
             <div class="panel-body">
-              <h4>123</h4>
-              <p>Data</p>
+              <h4><?php echo $nbrMsg[0]; ?></h4>
+              <p>Message</p>
             </div>
           </div>
         </div>

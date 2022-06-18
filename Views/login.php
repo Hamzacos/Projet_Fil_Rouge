@@ -1,8 +1,14 @@
 <?php
     if(isset($_POST['submit'])){
-        $loginUser = new UserController();
-        $loginUser->auth();
-        // echo 'jajajaja';
+        if(empty($_POST["email"]) || empty($_POST["password"]))
+        {
+          $message = '<label>Merci de verifier les champs</label>';
+        }else{
+
+            $loginUser = new UserController();
+            $loginUser->auth();
+        }
+            
     }
 ?>
 <!DOCTYPE html>
@@ -44,6 +50,12 @@
                 <div class="row justify-content-center ">
                         <div class="col-12 col-sm-6 col-md-4 mt-5">
                                     <h1 class="text-white py-3">Build Your Future Career </h1>
+                                    <?php  
+                                        if(isset($message))  
+                                        {  
+                                            echo '<label class="text-danger">'.$message.'</label>';  
+                                        }  
+                                    ?>
                                     <div class="mb-3">
                                      <form method="post">
                                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email" name="email">

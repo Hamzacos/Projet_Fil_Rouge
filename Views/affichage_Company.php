@@ -6,15 +6,19 @@
   
    $data = new companyController();
    $company = $data->getCompanyByName();
+   if(!$company) {
+    header('location: suggest');
+
+  }
 
 ?>
 <?php
   
-  $data = new companyController();
-  $company = $data->getCompanyByName();
+  // $data = new companyController();
+  // $company = $data->getCompanyByName();
 
-  $dataRate = new ratecompanyController();
-  $nbrRate =$dataRate-> CountAllRate();
+  // $rate_company = new ratecompanyController();
+  // $nbrRate_company =$rate_company-> CountAllRate();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,44 +35,10 @@
 </style>
 </head>
 <body>
-<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-    <a class="navbar-brand" href="#"><img src="assets/img/logo.png" style="width: 60px;height: 60px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  <div class="d-flex w-100">
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
-        <div>
-      <ul class="navbar-nav mr-auto ">
-        <li class="nav-item active">
-          <a class="nav-link" href="#"><img src="assets/img/cm.svg" style="width: 30px;height: 27px">Company</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link px-3" href="#"><img src ="assets/img/m.svg" style="width: 30px;height: 27px" >Salaries</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#"><img src ="assets/img/w.svg" style="width: 30px;height: 27px">Career</a>
-        </li>
-      </ul>
-    </div>
-      <div class="d-flex w-50 justify-content-end">
-      <form class="form-inline my-2 my-lg-0 d-flex w-100">
-        <input class="form-control mr-sm-2 me-2 w-" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    <div class="d-flex space-bteween">
-        <a class="nav-link" href=""><img src="assets/img/user-profile-svgrepo-com.svg" width="25px" height="25px" /></a>
-      <a class="nav-link" href=""><img src="assets/img/SE.svg" width="25px" height="25px" /></a>
-    </div>
-</div>
-      
-    </div>
-</div>
-  </nav> -->
-  <?php require_once('navbar.php'); ?>
 
-<div class="container-fluid">
+  <?php require_once('navbar.php'); ?>
+  <?php require_once ('headerAffichage.php'); ?>
+<!-- <div class="container-fluid">
     <div class="">
         <div class="panel profile-cover">
             <div class="profile-cover__img">
@@ -86,11 +56,11 @@
                 <ul class="nav">
                     <a href="affichage_Company?search=<?php echo $company['Name'] ?>"  class="text-decoration-none"><li class=" text-dark"><strong><?php echo  $nbrRate[0] ?></strong>Company Review</li></a>
                     <a href="afichage_Salary?search=<?php echo $company['Name'] ?>"  class="text-decoration-none"><li class=" text-dark"><strong>33</strong>Salary</li></a>
-                    <a href="#"  class="text-decoration-none"><li class=" text-dark"></li><li><strong>136</strong>Interview Review</li></a>
+                    <a href="affichage_Interview?search=<?php echo $company['Name'] ?>"  class="text-decoration-none"><li class=" text-dark"></li><li><strong>136</strong>Interview Review</li></a>
                     <a href="#"  class="text-decoration-none"><li class=" text-dark"></li><strong>136</strong>Workplace Photo</li></a>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <div class="panel">
             <div class="panel-heading">

@@ -1,8 +1,15 @@
 <?php
     if(isset($_POST['submit'])){
-        $creatUser = new UserController();
+        $pass = $_POST['password'];
+        $cpass = $_POST['Cpass'];
+        if($pass != $cpass){
+            $message[] = 'confirm password not matched!';
+        }else{
+            $creatUser = new UserController();
         $creatUser->register();
-        // echo 'lalallala';
+        }
+        
+        
     }
 ?>
 
@@ -57,6 +64,18 @@ in telling your story.</h2>
             </div>
     </div>
 </div>
+<?php
+                    if(isset($message)){
+                        foreach($message as $message){
+                            echo '
+                            <div class="message text-center py-3">
+                                <span class="text-danger border border-danger"><strong>'.$message.'</strong></span>
+                                <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                            </div>
+                            ';
+                        }
+                    }
+            ?>
     <section class="hero" style="background: #e2dcdc;height: 973px;">
         <section class="position-relative py-4 py-xl-5">
             <div class="container"><div class="row mb-5">
@@ -88,7 +107,7 @@ in telling your story.</h2>
                     <div class="mb-3 d-flex flex-column">
                         <label class="text-start">Work Email Address</label>
                         <input class="form-control email" type="email" name="email" placeholder="Work Email Address" id="email" />
-                        <div class=" errorerrorEmail text-danger"></div>
+                        <div class=" errorEmail text-danger"></div>
                     </div>
                     <div class="mb-3 d-flex flex-column">
                         <label class="text-start">Password</label>
@@ -101,7 +120,7 @@ in telling your story.</h2>
                         <div class="errorCpass text-danger"></div>
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-dark d-block w-100" type="submit" name="submit">Create Account</button>
+                        <button class="btn btn-dark d-block w-100 submit" type="submit" name="submit">Create Account</button>
                     </div>
                     <p class="text-muted">Already have an account ?<a href="login">Sign In</a></p>
                 </form>
@@ -219,7 +238,7 @@ in telling your story.</h2>
     </div>
 </footer>
 
-<!-- <script>
+<script>
     let formEl = document.querySelector('.form')
 
     let nomEl = document.querySelector('.name')
@@ -238,7 +257,7 @@ in telling your story.</h2>
     
 
     formEl.addEventListener('submit', (e) =>  {
-        e.preventDefault();
+        // e.preventDefault();
         if(nomEl.value == ''){
             e.preventDefault()
             errorNom.textContent = "Name is empty"
@@ -273,7 +292,7 @@ in telling your story.</h2>
         }
         else{
           errorEmail.textContent = ''
-          emailSignup.style.border = ''
+          emailEl.style.border = ''
         }
         
         if(password.value == ''){
@@ -291,7 +310,7 @@ in telling your story.</h2>
         }
         
     })
-  </script> -->
+  </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 

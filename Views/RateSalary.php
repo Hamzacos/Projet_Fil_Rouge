@@ -1,3 +1,14 @@
+<?php 
+  if(isset($_POST['insert'])){
+    $RatCompany = new ratesalaryController();
+    $RatCompany->addRateSalary();
+    // echo 'llalalaaa';
+    // die();
+   } 
+
+   $data = new companyController();
+   $companys = $data-> getAllCompany();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,50 +30,61 @@
             <div class="col-9 border  mt-5 mb-5 bg-white">
                 <h1 class="mt-5" >Add a Salary</h1><br>
                 <p>Your anonymous salary will help other job seekers.</p>
-                <form class=" p-3" method="post" action=""> 
+                <form class=" p-3" method="post" action=""  name="myform" onsubmit="return validateform()"> 
                     <div class="row">
                         <div class="col">
                             <label for="">Base Salary*</label>
                           <input type="text" class="form-control" name="base_salary" placeholder="Base Salary">
+                          <label id="salary" style="display:none">Merci de verfier le champs</label>
                         </div>
                         <div class="col">
                           <select class="form-control mt-4" id="inlineFormCustomSelect" name="devise">
-                            <option selected>US Dollar(USD)</option>
-                            <option value="2">Europe (EUR) - Euro (EUR)</option>
-                            <option value="3">Maroc (MAR) - Dirham marocain (MAD)</option>
+                            <option value="US Dollar(USD)" selected>US Dollar(USD)</option>
+                            <option value="Euro (EUR)">Europe (EUR) - Euro (EUR)</option>
+                            <option value="MAR Dirham (MAD)">Maroc (MAR) - Dirham marocain (MAD)</option>
                           </select>
                         </div>
                       </div>
                       <div class="row mt-4">
                         <div class="form-group col-md-4">
-                            <input type="radio" class="btn-check" name="per" id="option1" autocomplete="off" checked>
+                            <input type="radio" value="Year" class="btn-check" name="per" id="option1" autocomplete="off" checked>
                             <label class="btn btn-outline-secondary w-100" for="option1">Per Year</label>
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="radio" class="btn-check" name="per" id="btn-check" autocomplete="off">
+                            <input type="radio" class="btn-check" value="Month" name="per" id="btn-check" autocomplete="off">
                             <label class="btn btn-outline-dark w-100" for="btn-check">Per Month</label>
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="radio" class="btn-check" name="per" id="option2" autocomplete="off">
+                            <input type="radio" class="btn-check" value ="Hour" name="per" id="option2" autocomplete="off">
                             <label class="btn btn-outline-primary w-100" for="option2">Per Hour</label>
                         </div>
                       </div>
                       <h3 class="mt-5">Job Details *</h3>
                       <div class="form-group col-6 mt-3">
-                        <label for="formGroupExampleInput">Name of Company *</label>
-                        <input type="text" class="form-control" name="Name" id="formGroupExampleInput" placeholder="Enter Your Company">
+                        <!-- <label for="formGroupExampleInput">Name of Company *</label>
+                        <input type="text" class="form-control" name="Name" id="formGroupExampleInput" placeholder="Enter Your Company"> -->
+                         <!-- <input type="text" name="Name" class="form-control"  placeholder="Name Company"> -->
+                         <select id="inputState" class="form-control" name="Name" >
+                                <option selected>Choose Your Company</option>
+                                <?php foreach($companys as $company): ?>
+                                <option><?php echo $company['Name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                       </div>
                       <div class="form-group col-6 mt-3">
                         <label for="formGroupExampleInput">Job Title *</label>
                         <input type="text" class="form-control" name="job" id="formGroupExampleInput" placeholder="Enter Job Title">
+                        <label id="jobs" style="display:none">Merci de verfier le champs</label>
                       </div>
                       <div class="form-group col-6 mt-3">
                         <label for="formGroupExampleInput2">Years of Experience *</label>
                         <input type="text" class="form-control" name="years" id="formGroupExampleInput2" placeholder="Enter Years of Experience">
+                        <label id="year" style="display:none">Merci de verfier le champs</label>
                       </div>
                       <div class="form-group col-6 mt-3">
                         <label for="formGroupExampleInput2">Location *</label>
                         <input type="text" class="form-control" id="formGroupExampleInput2" name="location" placeholder="Enter Location">
+                        <label id="loc" style="display:none">Merci de verfier le champs</label>
                       </div>
                         <div class="w-100 d-flex justify-content-end">
                             <button type="submit" name="insert" class="btn btn-dark col-4 mt-5">Submit Salary</button>
@@ -94,5 +116,20 @@
         <p class="text-muted mb-0">Copyright © 2022 Aretmis-Jobs</p>
     </div>
 </footer>
+
+<script>
+    function validateform(){
+    var jobS  = document.myform.job.value;
+    var questions = document.myform.questions.value;
+
+
+          if (jobS == ""){
+            document.getElementById("JOBS").setAttribute("style","display:block;color:red");
+        }else if (questions == ""){
+            document.getElementById("quest").setAttribute("style","display:block;color:red");
+            return false;
+        }
+}  
+</script>
 </body>
 </html>

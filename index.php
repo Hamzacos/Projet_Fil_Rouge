@@ -7,7 +7,8 @@ require_once './Views/alert.php';
 
  $pages = ['login','Sing_up','dashbord','Dashbord_Admin','logout','Ajouter_Company','updateCompany','deleteCompany',
            'navbar','RateCompany','Form_Cont','AD_Company','profile_timeline','affichage_Company','deleteRat',
-           'afichage_Salary','RateSalary'];
+           'afichage_Salary','RateSalary','AD_Salary','deleteSal','RateInterview','AD_Interview','deleteINT','affichage_Interview',
+          'headerAffichage.php','workPlace','AD_WorkPlace','affichage_workplace','deleteImg','suggest','msg','deletSuggest'];
 
  if(isset($_SESSION['logged']) && $_SESSION['logged'] === true ){      
         if(isset($_GET['page'])){

@@ -2,8 +2,6 @@
   if(isset($_POST['insert'])){
     $RatCompany = new ratecompanyController();
     $RatCompany->addRateCompany();
-    // echo 'llalalaaa';
-    // die();
    } 
 ?>
 <?php
@@ -81,22 +79,22 @@
 
 <div class="container-fluid bg-light">
         <div class="row justify-content-center">
-            <div class="col-9 border  mt-5 mb-5 bg-white">
+            <div class="col-9 border  mt-5 mb-5 bg-white" >
                 <h1 class="mt-5" >Rate a Company</h1><br>
                 <p>It only takes a minute! And your anonymous review will help other job seekers.</p>
-                <form class=" p-3" method="post" action="">
+                <form class="p-3" method="post" action="" name="myform" onsubmit="return validateform()">
                     <div class="form-group row mt-3 mb-5">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Company*</label>
                         <div class="col-sm-7">
                             <!-- <input type="text" name="Name" class="form-control"  placeholder="Name Company"> -->
-                            <select id="inputState" class="form-control" name="Name" >
+                            <select id="inputState" class="form-control name" name="Name" >
                                 <option selected>Choose Your Company</option>
                                 <?php foreach($companys as $company): ?>
                                 <option><?php echo $company['Name'] ?></option>
                                 <?php endforeach; ?>
                             </select>
-                           
                         </div>
+                        <label id="nom" style="display:none">Merci de verfier le champs du nom</label>
                     </div>
                     <label for="Overall Rating" class="px-1">Overall Rating*</label>
                     <div class="rating"> 
@@ -105,32 +103,35 @@
                          <input type="radio" name="rate" value="3" id="3"><label for="3">☆</label> 
                          <input type="radio" name="rate" value="2" id="2"><label for="2">☆</label> 
                          <input type="radio" name="rate" value="1" id="1"><label for="1">☆</label>
+                         <label id="rate" style="display:none">Merci de verfier le champs du nom</label>
                     </div>
                     <div class ="mb-3">
                         <br><p>Are you a current or former employee?</p>
                             <div class="btn-group mx-5">
                                 <input type="radio" class="btn-check" name="tags" value ="Current" id="option1" autocomplete="off" checked />
                                 <label class="btn btn-secondary" for="option1">Current</label>
-
                                 <input type="radio" class="btn-check" name="tags" value="Former" id="option2" autocomplete="off" />
                                 <label class="btn btn-secondary" for="option2">Former</label>
-
                             </div>
+                            <label id="tags" style="display:none">Merci de verfier le champs </label>
                     </div>
                    <div class="form-group col-6 mb-3">
                         <label for="Your Job Title">Your Job Title</label>
-                        <input type="text" class="form-control" name="job" placeholder="Enter Your Job Title">
+                        <input type="text" class="form-control job" name="job" placeholder="Enter Your Job Title" >
+                        <label id="job" style="display:none">Merci de verfier le champs</label>
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Pros*</label>
-                        <textarea class="form-control"name="pros" id="exampleFormControlTextarea1" rows="3" placeholder="share some of the best reasons to work "></textarea>
+                        <textarea class="form-control pros"name="pros" id="exampleFormControlTextarea1" rows="3" placeholder="share some of the best reasons to work "></textarea>
+                        <label id="pros" style="display:none">Merci de verfier le champ </label>
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Cons*</label>
-                        <textarea class="form-control" name ="cons" id="exampleFormControlTextarea1" rows="3" placeholder="share some of the downsides of working "></textarea>
+                        <textarea class="form-control cons" name ="cons" id="exampleFormControlTextarea1" rows="3" placeholder="share some of the downsides of working "></textarea>
+                        <label id="cons" style="display:none">Merci de verfier le champs </label>
                       </div>
                       <div class="w-100 d-flex justify-content-end">
-                        <button type="submit" name="insert" class="btn btn-dark col-4 mt-5">Submit Review</button>
+                        <input type="submit" name="insert" class="btn btn-dark col-4 mt-5 submit" value="Submit Review"/>
                       </div>
                 </form>
             </div>
@@ -159,10 +160,39 @@
         <p class="text-muted mb-0">Copyright © 2022 Aretmis-Jobs</p>
     </div>
 </footer>
+<script>
+    function validateform(){
+    var Name = document.myform.Name.value;
+    var rate = document.myform.rate.value;
+    var tags = document.myform.tags.value;
+    var job  = document.myform.job.value;
+    var pros = document.myform.pros.value;
+    var cons = document.myform.cons.value;
 
+
+    if ( Name== ""){  
+        window.document.getElementById("nom").setAttribute("style","display:block;color:red"); 
+        return false;
+        }else if (rate== ""){
+            document.getElementById("rate").setAttribute("style","display:block;color:red");
+        }else if (tags== ""){
+            document.getElementById("tags").setAttribute("style","display:block;color:red");
+            return false;
+        }else if (job== ""){
+            document.getElementById("job").setAttribute("style","display:block;color:red");
+            return false;
+            }else if (pros== ""){
+            document.getElementById("pros").setAttribute("style","display:block;color:red");
+            return false;
+            }else if (cons== ""){
+            document.getElementById("cons").setAttribute("style","display:block;color:red");
+            return false;
+            }
+}  
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="assets/js/rating.js"></script>
+<!-- <script src="assets/js/rating.js"></script> -->
 
 </body>
 </html>
